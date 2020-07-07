@@ -1,4 +1,4 @@
-Documentation
+# Documentation
 
 __1. Create Postgres Database in Docker:__
 ```
