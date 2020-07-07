@@ -1,15 +1,15 @@
 Documentation
 
-	**1. Create Postgres Database in Docker:	**
+__1. Create Postgres Database in Docker:__
 ```
 docker run --name am-postgres -p 15432:5432 -e POSTGRES_PASSWORD={pass} -d postgres:latest
 ```
 
-	**2. Add Database to IntelliJ:	**
-User: postgres
-Password: {pass}
-Database: am-postgres
+__2. Add Database to IntelliJ:__
+- [ ] User: postgres
+* Password: {pass}
+* Database: am-postgres
 
-	**3. Initialize Tables in Anony:me Project:	**
+__3. Initialize Tables in Anony:me Project:__
 -Right click initialize.sql file
 -Choose "Run'Initilize.sql'..."
