@@ -6,6 +6,7 @@ var logger = require('morgan');
 const session = require('express-session');
 
 
+
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var opponentRouter = require('./routes/opponent');
@@ -26,12 +27,15 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/opponent', opponentRouter);
-//app.use('/session', sessionRouter);
+app.use('/session', sessionRouter);
 
+const FIVE_DAYS= 1000 * 60 * 60 * 24 * 5;
 app.use(session({
   secret: 'any secret',
   saveUninitialized: true,
-  cookie: {secure: false},
+  cookie: {
+    secure: false,
+    maxAge: FIVE_DAYS },
   name: 'anonyme',
   resave: true
 }))
