@@ -15,5 +15,6 @@ __3. Initialize Tables in Anony:me Project:__
 * Choose "Run'Initilize.sql'..."
 
 __3. How to use:__
+
 Viewport width: around 415px
 -> open up developer tools in browser and adjust window width.
