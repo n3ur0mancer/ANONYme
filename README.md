@@ -6,8 +6,8 @@ docker run --name anonyme -p 15432:5432 -e POSTGRES_PASSWORD={pass} -d postgres:
 ```
 
 __2. Connect Database to IntelliJ:__
-* User: postgres
-* Password: {pass}
+* User: anonyme
+* Password: anonyme
 * Database: anonyme
 
 __3. Initialize Tables in Anony:me Project:__
