@@ -5,7 +5,7 @@ __1. Create Postgres Database in Docker:__
 docker run --name anonyme -p 15432:5432 -e POSTGRES_PASSWORD={pass} -d postgres:latest
 ```
 
-__2. Add Database to IntelliJ:__
+__2. Connect Database to IntelliJ:__
 * User: postgres
 * Password: {pass}
 * Database: anonyme
