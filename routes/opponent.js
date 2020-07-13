@@ -27,30 +27,57 @@ const db = require('../db/index');
 const opponentRouter = express.Router();
 
 
-//get all players
-opponentRouter.get('/opponent', function (request, response) {
-  db.query('select player_username, avatar_icon from player_table, avatar_table where player_username is not NULL', (error, results) => {
-    if (error) {
-      throw error
-    }
-    response.render('opponent', {player_table: result.rows});
-  })
+//get all players on opponent page
+opponentRouter.get('/opponent', function (request, response, next) {
+
+  if(request.session.candidates && request.session.candidates.length > 0 )  {
+    const candidates = request.session.candidates;
+    const candidate = candidates.pop();
+    response.render('opponent', {candidate});
+
+  } else{
+    db.query('select * from player_table pt JOIN avatar_table at on pt.player_avatar_fk = at.avatar_pk where player_username is not NULL', (error, results) => {
+      if (error) {
+        throw error
+      }
+      const candidates = results.rows;
+      request.session.candidates= candidates;
+      const candidate = candidates.pop();
+      response.render('opponent', {candidate});
+    });
+
+  }
+
+
 });
 
+opponentRouter.post('/submit', function(req, res, next) {
+  //Check validity
+  req.check('email', 'Invalid Email address').isEmail();
+  req.check('password', 'password is invalid').isLength({min: 4}).equals(req.body.confirmPassword);
 
-/* //get 1 player?
-  opponentRouter.get('/id', function (request, response) {
-  const id = parseInt(request.params.id)
+  var errors= req.validationErrors();
+  if (error) {
+    req.session.errors = errors;
+  }
+  res.redirect('/');
+})
 
-  db.query('SELECT * FROM player_table WHERE id = $1', [id], (error, results) => {
-    if (error) {
-      throw error
-    }
-    response.render('id', {player_table: result.rows});
-  })
+/*
+//opponents array erstellen, wo alle gegner drin gespeichert sind
+//...
+
+//schauen ob session schon gestartet wurde, sonst starte neue session
+if() {
 };
+
+//  array with name opponents nacheinander ausgeben.
+for(let opponent of opponents)
+{
+  console.log(opponent);
+
 */
 
 
 
-module.exports = opponentRouter ;
+module.exports = opponentRouter;

@@ -4,13 +4,14 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 const session = require('express-session');
+var expressValidator = require('express-validator');
 
 
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var opponentRouter = require('./routes/opponent');
-var sessionRouter = require('./routes/session');
+
 
 var app = express();
 
@@ -23,22 +24,22 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
-
-app.use('/', indexRouter);
-app.use('/users', usersRouter);
-app.use('/opponent', opponentRouter);
-app.use('/session', sessionRouter);
-
 const FIVE_DAYS= 1000 * 60 * 60 * 24 * 5;
 app.use(session({
   secret: 'any secret',
-  saveUninitialized: true,
+  saveUninitialized: false,
   cookie: {
     secure: false,
     maxAge: FIVE_DAYS },
   name: 'anonyme',
-  resave: true
-}))
+  resave: false
+}));
+
+
+app.use('/', indexRouter);
+app.use('/users', usersRouter);
+app.use('/opponent', opponentRouter);
+
 
 
 // catch 404 and forward to error handler
