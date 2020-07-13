@@ -13,3 +13,7 @@ __2. Add Database to IntelliJ:__
 __3. Initialize Tables in Anony:me Project:__
 * Right click initialize.sql file
 * Choose "Run'Initilize.sql'..."
+
+__3. How to use:__
+Viewport width: around 415px
+-> open up developer tools in browser and adjust window width.
