@@ -1,3 +1,7 @@
+CREATE USER anonyme WITH PASSWORD 'anonyme';
+
+GRANT ALL PRIVILEGES ON DATABASE anonyme TO anonyme;
+
 create table avatar_table
 (
     avatar_pk    serial not null
@@ -7,7 +11,7 @@ create table avatar_table
 );
 
 alter table avatar_table
-    owner to postgres;
+    owner to anonyme;
 
 create table player_table
 (
@@ -24,7 +28,7 @@ create table player_table
 );
 
 alter table player_table
-    owner to postgres;
+    owner to anonyme;
 
 create table password_table
 (
@@ -38,7 +42,7 @@ create table password_table
 );
 
 alter table password_table
-    owner to postgres;
+    owner to anonyme;
 
 create unique index password_table_password_pk_uindex
     on password_table (password_pk);
@@ -69,7 +73,7 @@ create table training_table
 );
 
 alter table training_table
-    owner to postgres;
+    owner to anonyme;
 
 create unique index training_table_training_pk_uindex
     on training_table (training_pk);
@@ -86,7 +90,7 @@ create table action_table
 );
 
 alter table action_table
-    owner to postgres;
+    owner to anonyme;
 
 create unique index action_table_action_pk_uindex
     on action_table (action_pk);
@@ -101,7 +105,7 @@ create table session_table
 );
 
 alter table session_table
-    owner to postgres;
+    owner to anonyme;
 
 create unique index session_table_session_pk_uindex
     on session_table (session_pk);
