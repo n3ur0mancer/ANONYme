@@ -51,18 +51,6 @@ opponentRouter.get('/opponent', function (request, response, next) {
 
 });
 
-opponentRouter.post('/submit', function(req, res, next) {
-  //Check validity
-  req.check('email', 'Invalid Email address').isEmail();
-  req.check('password', 'password is invalid').isLength({min: 4}).equals(req.body.confirmPassword);
-
-  var errors= req.validationErrors();
-  if (error) {
-    req.session.errors = errors;
-  }
-  res.redirect('/');
-})
-
 /*
 //opponents array erstellen, wo alle gegner drin gespeichert sind
 //...
