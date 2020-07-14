@@ -24,7 +24,9 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+
 const FIVE_DAYS= 1000 * 60 * 60 * 24 * 5;
+
 app.use(session({
   secret: 'any secret',
   saveUninitialized: false,
@@ -60,3 +62,4 @@ app.use(function(err, req, res, next) {
 
 
 module.exports = app;
+
