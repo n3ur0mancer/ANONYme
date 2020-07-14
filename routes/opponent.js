@@ -76,7 +76,6 @@ opponentRouter.get('/opponent', function (request, response, next) {
 
   }
 
-
 });
 
 /*

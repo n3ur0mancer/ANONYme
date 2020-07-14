@@ -1,4 +1,4 @@
-/* var express = require('express');
+var express = require('express');
 var sessionRouter = express.Router();
 
 sessionRouter.get('/session', function(req, res, next) {
@@ -8,10 +8,10 @@ res.send( '<h1> Welcome </h1>');
 
 module.exports = sessionRouter;
 
-/*
 
 
-/* //get 1 player?
+
+//get 1 player?
   opponentRouter.get('/id', function (request, response) {
   const id = parseInt(request.params.id)
 
@@ -22,4 +22,3 @@ module.exports = sessionRouter;
     response.render('id', {player_table: result.rows});
   })
 };
-*/
