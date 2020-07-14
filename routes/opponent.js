@@ -26,9 +26,37 @@ const express = require('express');
 const db = require('../db/index');
 const opponentRouter = express.Router();
 
+/* CREATE TABLE images (imgname text, img bytea);
+File file = new File("myimage.gif");
+FileInputStream fis = new FileInputStream(file);
+PreparedStatement ps = conn.prepareStatement("INSERT INTO images VALUES (?, ?)");
+ps.setString(1, file.getName());
+ps.setBinaryStream(2, fis, file.length());
+ps.executeUpdate();
+ps.close();
+fis.close();
+
+ */
+
 
 //get all players on opponent page
 opponentRouter.get('/opponent', function (request, response, next) {
+
+
+  //const nextone = document.getElementById('thumbs-down');
+  //const startgame = document.getElementsByClassName('thumbs-up');
+
+  /*nextone.addEventListener('click', function(e) {
+    console.log('thumbs-down button was clicked');
+    //
+  }, false);
+
+  startgame.addEventListener('click', function(){
+    console.log('thumbs-up button was clicked');
+    //
+  }, false);
+
+   */
 
   if(request.session.candidates && request.session.candidates.length > 0 )  {
     const candidates = request.session.candidates;
@@ -43,7 +71,7 @@ opponentRouter.get('/opponent', function (request, response, next) {
       const candidates = results.rows;
       request.session.candidates= candidates;
       const candidate = candidates.pop();
-      response.render('opponent', {candidate});
+      response.render('opponent', candidate);
     });
 
   }

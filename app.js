@@ -11,7 +11,7 @@ var expressValidator = require('express-validator');
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var opponentRouter = require('./routes/opponent');
-
+var gameRouter = require('./routes/game');
 
 var app = express();
 
@@ -40,7 +40,8 @@ app.use(session({
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
-app.use('/opponent', opponentRouter);
+app.use('/', opponentRouter);
+app.use('/', gameRouter);
 
 
 

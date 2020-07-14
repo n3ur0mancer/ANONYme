@@ -3,17 +3,18 @@
 </a>
 <h1>{{title}}</h1>
 <div class="player-card">
-    <img class='avatar' src="{{avatar_table.avatar_image}}" alt="{{player_table.player_username}}">
+    <img class='avatar' src="{{avatar_image}}" alt="{{player_username}}">
     <div class="player-details">
-        <h2>Linda{{player_table.player_username}}</h2>
-        <p>Punktestand:{{player_table.player_score}}</p>
+        <h2>Linda{{player_username}}</h2>
+        <p>Punktestand:{{player_score}}</p>
     </div>
 </div>
 <a href="/game" class="thumbs-up">
     <img src="/images/thumbs-up.png" width="48" height="48">
 </a>
-<button id="thumbs-down">
+
+<a href="/opponent" class="thumbs-down">
     <img src="/images/thumbs-down.png" class="thumbs-down" width="48" height="48">
-</button>
+</a>
 
 <script src="scripts/clickevent.js"></script>
