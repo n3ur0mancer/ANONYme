@@ -4,9 +4,9 @@ const pool = new Pool({
     host: 'localhost',
     port: 15432,
 
-    database: 'am-postgres',
-    password: 'pass',
-    user: 'postgres',
+    database: 'anonyme',
+    password: 'anonyme',
+    user: 'anonyme',
 
     max: 10,
     idleTimeoutMillis: 30000,

@@ -1,5 +1,28 @@
 <a href="/">
     <img src="/images/back.png" width="48" height="48">
 </a>
-<h1>Linda{{player_table.player_username}}</h1>
+<img class='avatar-image' src="{{avatar_table.avatar_image}}" alt="{{player_table.player_username}}">
+<h1>{{player_table.player_username}}</h1>
+
+<!-- insert progress bar below-->
+
+<!-- display chosen messages and values-->
+<div class="chat">
+    <div class="bubble">
+        <div class="message">Lorem Ipsum dolor sit amet.{{action_table.action_text}}</div>
+        <div class="value">200{{action_table.action_value}}</div>
+    </div>
+    <div class="bubble-opponent">
+        <div class="message">Lorem Ipsum dolor sit amet.{{action_table.action_text}}</div>
+        <div class="value">200{{action_table.action_value}}</div>
+    </div>
+</div>
+<!-- button to get text options of action_table-->
+<button class="get-options">sende eine Nachricht...</button>
+<!-- get three texts of action_table-->
+<div class="option-overlay">
+    <button class="option">Lorem Ipsum dolor{{action_table.action_text}}</button>
+    <button class="option">Sit amet{{action_table.action_text}}</button>
+    <button class="option">amet sit lorem Ipsum{{action_table.action_text}}</button>
+</div>
 
