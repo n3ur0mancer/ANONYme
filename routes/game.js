@@ -7,4 +7,4 @@ gameRouter.get('/game', function(req, res, next) {
     res.render('game');
 });
 
-module.exports = router;
+module.exports = gameRouter;
