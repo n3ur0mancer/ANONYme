@@ -16,5 +16,5 @@ __3. Initialize Tables in Anony:me Project:__
 
 __3. How to use:__
 
-Viewport width: around 415px
+Viewport width: 375px
 -> open up developer tools in browser and adjust window width.
