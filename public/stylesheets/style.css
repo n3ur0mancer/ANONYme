@@ -39,22 +39,12 @@ a {
   color: #FFFFFF;
   text-align: center;
 }
-/*victim*/
-.thumbs-up{
-  position: relative;
-  float: left;
-  margin-top: 20px;
-  margin-left: 80px;
+/*opponent*/
+.avatar{
+  margin-left: 60px;
+  margin-top:20px;
 }
-#thumbs-down{
-  position: relative;
-  float: right;
-  border: 0;
-  padding: 0;
-  margin-top: 20px;
-  margin-right: 80px;
-  background:none;
-}
+
 .player-card{
   margin-top: 150px;
   position: center;
@@ -68,7 +58,22 @@ a {
   padding: 20px;
   position: relative;
   background-color: #E8EDED;
+  border-radius: 0px 0px 15px 15px;
+  box-shadow: 0px 0px 10px #CED9D9;
 }
+.thumbs-up{
+  position: relative;
+  float: left;
+  margin-top: 20px;
+  margin-left: 80px;
+}
+.thumbs-down{
+  position: relative;
+  float: right;
+  margin-top: 20px;
+  margin-right: 80px;
+}
+
 /*game*/
 .avatar-image{
   float: right;
